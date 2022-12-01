@@ -1,7 +1,6 @@
 @MainActor
 public final class AccessTracker<State: Equatable> {
-
-    nonisolated public init() {}
+    public nonisolated init() {}
 
     public func registerAccess<Output: Equatable>(
         _ view: KeyPath<State, Output>
@@ -32,5 +31,4 @@ public final class AccessTracker<State: Equatable> {
     }
 
     private var views: Set<PartialAccessRecord<State>> = []
-
 }

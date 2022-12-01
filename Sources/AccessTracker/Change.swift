@@ -12,7 +12,6 @@ public protocol ChangeType {
 // MARK: - Change
 
 public struct Change<T: Equatable>: Equatable, ChangeType {
-
     public init?(
         old: T?,
         new: T?,
@@ -37,7 +36,6 @@ public struct Change<T: Equatable>: Equatable, ChangeType {
     public func with(old: T?, new: T?) -> Change? {
         .init(old: old, new: new, id: id, systemUptime: systemUptime)
     }
-
 }
 
 // MARK: Codable

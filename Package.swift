@@ -19,7 +19,7 @@ let package = Package(
         .target(
             name: "AccessTracker",
             dependencies: [
-                "Disposable"
+                "Disposable",
             ]
         ),
         .testTarget(

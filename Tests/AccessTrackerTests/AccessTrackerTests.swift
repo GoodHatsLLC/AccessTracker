@@ -5,7 +5,6 @@ import XCTest
 
 @MainActor
 final class AccessTrackerTests: XCTestCase {
-
     func test_accessTracker_doesNotFire_forNoAccesses() throws {
         let state = SomeState()
         var otherState = SomeState()

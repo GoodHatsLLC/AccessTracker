@@ -1,7 +1,6 @@
 // MARK: - AccessRecord
 
 struct AccessRecord<Input: Equatable, Output: Equatable> {
-
     // MARK: Lifecycle
 
     nonisolated init(
@@ -16,11 +15,9 @@ struct AccessRecord<Input: Equatable, Output: Equatable> {
     // MARK: Private
 
     private let viewFunc: (Input) -> Output
-
 }
 
 extension AccessRecord {
-
     func outputChanges(
         given change: Change<Input>
     )
@@ -37,7 +34,6 @@ extension AccessRecord {
 // MARK: Hashable
 
 extension AccessRecord: Hashable {
-
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.partial == rhs.partial
     }
@@ -45,5 +41,4 @@ extension AccessRecord: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(partial)
     }
-
 }

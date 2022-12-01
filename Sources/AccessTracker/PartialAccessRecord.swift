@@ -1,7 +1,6 @@
 // MARK: - PartialAccessRecord
 
 struct PartialAccessRecord<Input: Equatable> {
-
     nonisolated init<Output: Equatable>(view: AccessRecord<Input, Output>) {
         partial = view.partial
         outputChangesFunc = { view.outputChanges(given: $0) }
@@ -18,13 +17,11 @@ struct PartialAccessRecord<Input: Equatable> {
     {
         outputChangesFunc(change)
     }
-
 }
 
 // MARK: Hashable
 
 extension PartialAccessRecord: Hashable {
-
     static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.partial == rhs.partial
     }
@@ -32,5 +29,4 @@ extension PartialAccessRecord: Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(partial)
     }
-
 }
